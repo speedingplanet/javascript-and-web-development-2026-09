@@ -45,9 +45,7 @@ function myFunction2() {}
 
 class PeopleManager {
 	constructor() {
-		this.people = [
-			/* person objects */
-		];
+		this.people = [/* person objects */];
 	}
 
 	doSomethingWithPeople() {

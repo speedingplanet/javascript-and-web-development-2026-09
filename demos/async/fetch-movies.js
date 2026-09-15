@@ -39,7 +39,7 @@ async function fetchAllMoviesAsync() {
 		}
 	} catch (error) {
 		console.error('Error retrieving movies:', error);
-		throw new Error('Could not get movies');
+		throw new Error('Could not get movies', { cause: error });
 	}
 }
 
