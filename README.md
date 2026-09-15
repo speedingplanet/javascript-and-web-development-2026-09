@@ -31,11 +31,15 @@ Having handled any install issues, run `npm test`. All tests should pass.
 
 ## FAQ
 
-1. Why is there no `package-lock.json` file?
+### Why is there no `package-lock.json` file?
 
 Because for some dependencies, there will be a difference between the version on a public NPM JS repository and the version a local instance of Artifactory will permit.
 
-2. On Windows, I get a message about not being allowed to run scripts or running scripts is disabled? Frequently this comes up in terminals from Visual Studio Code....
+### According to NPM there are audit issues!
+
+This is a known issue. There are two packages (`http-server` and `json-server`) which provide quite a bit of utility in class. But they're a bit out of date. Since we won't be using them in production, we don't have to worry about the two audit issues.
+
+### On Windows, I get a message about not being allowed to run scripts or running scripts is disabled? Frequently this comes up in terminals from Visual Studio Code....
 
 The issue is that your PowerShell terminal has a restrictive ExecutionPolicy. In Visual Studio Code you can change this by accessing [settings.json](https://code.visualstudio.com/docs/configure/settings#_settings-editor) and adding the following:
 
