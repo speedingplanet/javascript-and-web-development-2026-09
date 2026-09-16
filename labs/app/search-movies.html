@@ -6,23 +6,55 @@
 			name="viewport"
 			content="width=device-width, initial-scale=1.0"
 		/>
+		<link
+			rel="stylesheet"
+			href="/css/bootstrap.css"
+		/>
 		<title>Search For Movies</title>
 	</head>
 	<body>
-		<form>
-			<div>
-				<label for="search-title">Search by title:</label>
-				<!-- input:text#search-title -->
-				<input
-					type="text"
-					name="search-title"
-					id="search-title"
-				/>
-				<button type="button">Search</button>
-			</div>
-			<div>
-				<p>Results will appear here.</p>
-			</div>
-		</form>
+		<main class="container">
+			<header class="mt-2">
+				<h2>Search movies</h2>
+				<hr />
+			</header>
+			<form>
+				<div class="mt-3">
+					<label
+						for="search-title"
+						class="form-label"
+					>
+						Search by title:
+					</label>
+					<!-- input:text#search-title -->
+					<input
+						type="text"
+						name="search-title"
+						id="search-title"
+						class="form-control"
+					/>
+
+					<div class="mt-2">
+						<button
+							type="button"
+							id="search-button"
+							class="btn btn-primary"
+						>
+							Search
+						</button>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<p id="search-message">You searched on ...</p>
+						<p>Results will appear here.</p>
+					</div>
+				</div>
+			</form>
+		</main>
+		<script
+			type="module"
+			src="src/search-movies.js"
+		></script>
 	</body>
 </html>
