@@ -3,6 +3,10 @@
 	grid-template-columns: 1fr 1fr 1fr;
 }
 
+.grid-body {
+	display: contents;
+}
+
 .grid-row {
 	display: grid;
 	grid-column: 1 / -1;
@@ -13,4 +17,8 @@
 	font-weight: bold;
 	text-align: center;
 	border-bottom: 4px double black;
+}
+
+.grid-cell:not(:first-child) {
+	text-align: center;
 }
