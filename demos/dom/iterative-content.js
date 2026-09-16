@@ -62,8 +62,8 @@ function useInsertAdjacentHTML() {
 	/*
 	movies.forEach((movie) => {
 		list.insertAdjacentHTML('beforeEnd', `<li>${movie.title} (${movie.year})</li>`);
-	});
-	*/
+		});
+		*/
 
 	// One repaint
 	// root.append(list);

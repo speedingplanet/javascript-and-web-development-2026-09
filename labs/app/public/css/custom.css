@@ -1,0 +1,16 @@
+.grid-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid-row {
+	display: grid;
+	grid-column: 1 / -1;
+	grid-template-columns: subgrid;
+}
+
+.grid-header-row {
+	font-weight: bold;
+	text-align: center;
+	border-bottom: 4px double black;
+}

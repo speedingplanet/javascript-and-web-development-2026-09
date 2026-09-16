@@ -10,6 +10,10 @@
 			rel="stylesheet"
 			href="/css/bootstrap.css"
 		/>
+		<link
+			rel="stylesheet"
+			href="/css/custom.css"
+		/>
 		<title>Search For Movies</title>
 	</head>
 	<body>
@@ -44,13 +48,28 @@
 						</button>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col">
-						<p id="search-message">You searched on ...</p>
-						<p>Results will appear here.</p>
+			</form>
+			<div class="row">
+				<div class="col">
+					<p id="search-message">You searched on ...</p>
+					<p>Results will appear here.</p>
+					<div class="grid-container">
+						<div class="grid-row grid-header-row">
+							<div class="grid-cell">Title</div>
+							<div class="grid-cell">Year</div>
+							<div class="grid-cell">Rating</div>
+						</div>
+						<!-- (.grid-row>.grid-cell*3>{Item $})*3 -->
+						<!-- 
+						<div class="grid-row">
+							<div class="grid-cell">Item 1</div>
+							<div class="grid-cell">Item 2</div>
+							<div class="grid-cell">Item 3</div>
+						</div> 
+						-->
 					</div>
 				</div>
-			</form>
+			</div>
 		</main>
 		<script
 			type="module"
