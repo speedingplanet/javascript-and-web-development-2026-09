@@ -93,6 +93,9 @@ states.sort();
 // Use the array copying technique from above to prevent this
 let sortedStates = [...states].sort();
 
+// Or use the new(ish) toSorted method
+let sortedStates2 = states.toSorted();
+
 // Create a copy, sort it, reverse it
 const reversesortedStates = [...states].sort().reverse();
 
@@ -126,12 +129,19 @@ const people = [
 //
 // 'ab' is greater than 'aa' in JavaScript, or put another way
 // strings higher in alphabetical order are less than those that are lower
-people.sort((p1, p2) => {
-	if (p1.lastName > p2.lastName) {
+let sortedByHand = people.toSorted((p1, p2) => {
+	if (p1.lastName < p2.lastName) {
 		return -1;
-	} else if (p1.lastName < p2.lastName) {
+	} else if (p1.lastName > p2.lastName) {
 		return 1;
 	} else {
 		return 0;
 	}
 });
+
+console.log('People: sort by hand', sortedByHand);
+
+let comparator = new Intl.Collator('en').compare;
+let sortedByIntl = people.toSorted((p1, p2) => comparator(p1.lastName, p2.lastName));
+
+console.log('People: sort by Intl', sortedByIntl);

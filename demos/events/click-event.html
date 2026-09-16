@@ -84,8 +84,21 @@
 			}
 
 			// addEventListener(name of event, what to do)
-			// buttonRef.addEventListener('click', () => console.log('You clicked on the button'));
 			buttonRef.addEventListener('click', handleClick);
+
+			// Inline function
+			/*
+			buttonRef.addEventListener('click', function () {
+				console.log('You clicked on the button!');
+			});
+			*/
+
+			// Inline arrow function
+			/*
+			buttonRef.addEventListener('click', () => {
+				console.log('You clicked on the button');
+			});
+			*/
 		</script>
 	</body>
 </html>
