@@ -1,6 +1,9 @@
 /* eslint-disable no-unused-vars */
 const states = ['NJ', 'MA', 'CA', 'IL', 'FL'];
 
+// let [firstState, secondState, thirdState] = states;
+let [firstState, secondState, thirdState, ...rest] = states;
+
 // Shallow copy
 const copiedStates = [...states];
 

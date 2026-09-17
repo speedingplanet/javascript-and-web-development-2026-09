@@ -70,6 +70,28 @@ me.salary = 100000000000000;
 me.getSalary();
 me.salary;
 
+let defaultConfig = {
+	firstName: null,
+	lastName: null,
+	employeeId: -1,
+	salary: 50000,
+	jobTitle: 'Associate',
+	companyName: 'Sprockets and Cogs, Ltd.',
+};
+
+export class OverloadableEmployee {
+	// Use a config object
+	constructor(config) {
+		Object.assign(this, defaultConfig, config);
+
+		let allowedProperties = ['foo', 'bar', 'baz'];
+
+		for (let prop of allowedProperties) {
+			this[prop] = config[prop] ?? defaultConfig[prop];
+		}
+	}
+}
+
 export class EmployeeV2 {
 	// Private members
 	/** @type {string | null} */

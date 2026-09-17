@@ -1,9 +1,26 @@
 /* eslint-disable no-unused-vars */
 const person = {
+	// Typical property get and set
 	firstName: 'John',
 	lastName: 'Paxton',
 	city: 'Nutley',
 	state: 'NJ',
+
+	// Properties as getters/setters
+	get country() {
+		return 'United States';
+	},
+
+	get fullName() {
+		return `${this.firstName} ${this.lastName}`;
+	},
+
+	set fullName(fullName) {
+		// Assumes ALL names are "firstName lastName", e.g. "John Smith"
+		let [firstName, lastName] = fullName.split(' ');
+		this.firstName = firstName;
+		this.lastName = lastName;
+	},
 
 	// Different ways to add a function
 	getState() {
@@ -14,6 +31,14 @@ const person = {
 	},
 	add: (x, y) => x + y,
 };
+
+// Accessing various properties
+console.log('person.firstName:', person.firstName);
+console.log('person.country:', person.country);
+console.log('person.fullName:', person.fullName);
+console.log('Setting fullName to "Bob Dobalina"');
+person.fullName = 'Bob Dobalina';
+console.log('person.fullName:', person.fullName);
 
 // Iteration possibilities
 const keys = Object.keys(person);
@@ -28,7 +53,7 @@ Object.keys(person).forEach((key) => {
 
 // Object.keys() equivalent
 for (const key in person) {
-	// Whatever
+	console.log(key);
 }
 
 // enumerable: does this key show up in a loop?
@@ -50,9 +75,10 @@ Object.defineProperty(person, 'someMethod', {
 
 // Destructuring
 const { firstName, lastName } = person;
+const { firstName: fName, lastName: lName } = person;
 
 // Identifiers: $, _, or alphabetical character, followed by $, _, alphanumeric
-// $, _, $foo, _foo, foo, bar, baz, something_complicated;
+// $, _, $foo, _foo, foo, bar, baz, something_complicated, abc123;
 
 let someValue = 10;
 

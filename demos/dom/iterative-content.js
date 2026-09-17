@@ -13,7 +13,8 @@ function useCreateElement() {
 	// Using for-of
 	for (let movie of movies) {
 		const item = document.createElement('li');
-		item.textContent = `${movie.title} (${movie.year})`;
+		// item.textContent = `${movie.title} (${movie.year})`;
+		item.append(`${movie.title} (${movie.year})`);
 
 		// All elements have append(), prepend(), before(), after()
 		// Equivalent to afterbegin, beforeend, beforebegin, afterend in insertAdjacentHTML
@@ -21,30 +22,8 @@ function useCreateElement() {
 		list.append(item);
 	}
 
-	// Using Array.prototype.forEach
-	/*
-	movies.forEach((movie) => {
-		const item = document.createElement('li');
-		item.textContent = `${movie.title} (${movie.year})`;
-		list.append(item);
-	});
-	*/
-
-	// Using Array.prototype.map
-	/*
-	let items = movies.map((movie) => {
-		const item = document.createElement('li');
-		item.textContent = `${movie.title} (${movie.year})`;
-		return item;
-	});
-
-	// Items is an array, append() expects individual arguments, e.g.
-	// append(listItem1, listItem2, listItem3), NOT an array
-	// The spread (...) operator, spreads the array into individual items
-	list.append(...items);
-	*/
-
 	// One repaint
+	// root.append(list);
 	root.replaceChildren(list);
 }
 
@@ -52,18 +31,11 @@ function useCreateElement() {
 function useInsertAdjacentHTML() {
 	console.log('Using element.insertAdjacentHTML()');
 	const root = document.querySelector('#insert-adjacent-html');
-	// root.replaceChildren();
 
 	const list = document.createElement('ul');
 	for (let movie of movies) {
 		list.insertAdjacentHTML('beforeEnd', `<li>${movie.title} (${movie.year})</li>`);
 	}
-
-	/*
-	movies.forEach((movie) => {
-		list.insertAdjacentHTML('beforeEnd', `<li>${movie.title} (${movie.year})</li>`);
-		});
-		*/
 
 	// One repaint
 	// root.append(list);
