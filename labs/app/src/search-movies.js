@@ -23,6 +23,19 @@ buttonRef.addEventListener('click', function () {
 	target.replaceChildren(...rows);
 });
 
+textField.addEventListener('keydown', (e) => {
+	if (e.key === 'Enter') {
+		// Turns off default behavior (submitting the form)
+		e.preventDefault();
+
+		// Fires the button click event instead
+		buttonRef.click();
+		return false;
+	} else {
+		return true;
+	}
+});
+
 function matchesToRows(matches) {
 	let fields = ['title', 'year', 'rating'];
 	let rows = [];
